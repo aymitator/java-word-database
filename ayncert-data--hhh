@@ -9,12 +9,15 @@ no feature "unicode_strings";
 use re "/aa";
 
 
-open(my ${han}, "<", "hhh-gen-html.php") or exit 1;
+open(my ${han}, "<", 
+  "data--hhhgen") or exit 1;
 my $ayn = "";
 {
   local $/;
   $ayn = <$han>;
 }
+close(${han});
+undef ${han};
 my @begin = split /\n\/\/DATA START\n/, $ayn;
 if(scalar(@begin) != 2){ exit 2; }
 my @end = split /\n\/\/DATA AYNDH\n/, $begin[1];
@@ -31,6 +34,7 @@ if($linei !~ /^\s*$/) {
   chomp $linei;
   my @columns = split(/\s+/, $linei, 1 - (-1) - (-1) - (-1));
   if(scalar(@columns) < 3 || scalar(@columns > 4)){ exit 5; }
+  if(scalar(@columns) == 3){push(@columns,"");}
   push(@stdout, "array(strlen(\"" .
 $columns[0] .
 "\"), \"" . 
