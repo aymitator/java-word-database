@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+
+use v5.36.0;
+no feature "unicode_strings";
+use re "/aa";
+
+if(scalar(@ARGV) != 1){ exit 1; }
+my $argv = $ARGV[0];
+if($argv !~ /\.html$/){ exit 2; }
+if(! -f $argv){ exit 6; }
+open(my ${han}, "<", $argv) or exit 3;
+my $ayn = "";
+{
+  local $/;
+  $ayn = <$han>;
+}
+close(${han});
+undef ${han};
+defined($ayn) or exit 8;
+
+my $sz = $ayn;
+my $worked = 0;
+if($sz =~ s/<td>([^<]+)/<td style=""><b>$1<\/b>/) {
+  $worked = 1;
+  $sz =~ s/<td>/<td style="">/;
+  $sz =~ s/<td>([^<]+)/<td style=""><em>$1<\/em>/;
+  $sz =~ s/<td>/<td style="">/;
+}
+if(!$worked){ exit 9; }
+say $sz;

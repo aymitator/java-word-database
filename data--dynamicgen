@@ -13,15 +13,15 @@ var data = [
 var i=0;
 var d = document;
 while(i < data.length){
-d.write("<tr><td>" +
+d.write('<tr><td>' +
 data[i][0] +
-"</td><td>" +
+'</td><td>' +
 data[i][1] +
-"</td><td>" +
+'</td><td>' +
 data[i][2] +
-"</td><td>" +
+'</td><td>' +
 data[i][3] +
-"</td></tr>");
+'</td></tr>');
 i+=1;
 }
 

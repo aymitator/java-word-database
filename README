@@ -6,11 +6,19 @@ vim data #edit/add to database
 perl ayncert-data--html > 1.html #(has JaavaScript ayn it_)
 firefox 1.html
 
+Styling quickstart?
+htmltostyled 1.html > ii.html
+firefox ii.html
+
 Alternative quickstart?
 vim data
 perl ayncert-data--hhh > 1.php
 php 1.php > 1.html #(is static HTML only)
 firefox 1.html
+
+Alternative styled quikstart?
+htmltostyled 1.html > ii.html
+firefox ii.html
 
 Altii quickstart?
 perl data-add myword dictonary word-idea-here
