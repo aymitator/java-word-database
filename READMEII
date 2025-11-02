@@ -1,0 +1,25 @@
+
+
+Alternative quickstart?
+vim data
+perl ayncert-data--hhh > 1.php
+php 1.php > 1.html #(is static HTML only)
+firefox 1.html
+
+Alternative styled quikstart?
+perl htmltostyled 1.html > ii.html
+lynx ii.html
+
+Altii quickstart?
+perl data-add myword dictonary word-idea-here
+
+Altiii quickstart?
+javac org/coreyh/wordbcheat/CheatWindow.java
+java org.coreyh.wordbcheat.CheatWindow
+
+what is needed?
+Perl iiiii und browser-JavaScript browser
+Otherwise: PERL IIIII und PHP IIII_IIII und any-any browser
+Also: Java Development Kit to run org.coreyh.wordbcheat.CheatWindow.java
+Also: Perl to add to "data" (words) easiest using "data-add"
+

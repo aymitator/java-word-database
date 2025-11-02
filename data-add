@@ -8,6 +8,7 @@ if(scalar(@ARGV) < 2){exit 6;}
 my $ARGV = join(" ", @ARGV);
 
 open(my ${han}, "<", "data") or exit 2;
+binmode(${han});
 
 my $ayn = "";
 {
@@ -18,7 +19,7 @@ close(${han});
 undef(${han});
 defined($ayn) or exit 3;
 my @ayn = 
-split /\n/, $ayn;
+split /\012/, $ayn;
 @ayn = grep { $_ !~ /^\s*$/ } @ayn;
 my $id = 1;
 if(@ayn > 0 && $ayn[$#ayn] =~ /^(i+) /) {
@@ -27,8 +28,9 @@ if(@ayn > 0 && $ayn[$#ayn] =~ /^(i+) /) {
 my $szid = "i" x $id;
 
 open(my ${hanii}, ">", "data") or exit 8;
+binmode(${hanii});
 print ${hanii}
-  join("\n", @ayn) .
-  "\n" . $szid . " " . $ARGV;
+  join("\012", @ayn) .
+  "\012" . $szid . " " . $ARGV;
 close(${hanii});
 undef(${hanii});

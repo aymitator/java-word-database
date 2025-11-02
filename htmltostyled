@@ -9,6 +9,7 @@ my $argv = $ARGV[0];
 if($argv !~ /\.html$/){ exit 2; }
 if(! -f $argv){ exit 6; }
 open(my ${han}, "<", $argv) or exit 3;
+binmode(${han});
 my $ayn = "";
 {
   local $/;
@@ -17,14 +18,19 @@ my $ayn = "";
 close(${han});
 undef ${han};
 defined($ayn) or exit 8;
+if($ayn eq "") { exit 10; }
 
 my $sz = $ayn;
 my $worked = 0;
+while ( 1 ) {
 if($sz =~ s/<td>([^<]+)/<td style=""><b>$1<\/b>/) {
   $worked = 1;
   $sz =~ s/<td>/<td style="">/;
   $sz =~ s/<td>([^<]+)/<td style=""><em>$1<\/em>/;
   $sz =~ s/<td>/<td style="">/;
+  next;
+}
+last;
 }
 if(!$worked){ exit 9; }
-say $sz;
+print $sz;
