@@ -3,7 +3,7 @@
 Alternative quickstart?
 vim data
 perl ayncert-data--hhh -o 1.php
-php 1.php -o 1.html  #(is static HTML onnly)
+php 1.php > 1.html  #(is static HTML only)
 firefox 1.html
 
 Alternative styled quikstart?
@@ -13,7 +13,8 @@ lynx ii.html
 Altii quickstart?
 perl data-add myword dictonary word-idea-here
 
-Altiii quickstart?
+Adding to "data"/"./data" non-commandline solution?
+# (needs JDK/Java Development Kit)
 javac org/coreyh/wordbcheat/CheatWindow.java
 java org.coreyh.wordbcheat.CheatWindow
 
