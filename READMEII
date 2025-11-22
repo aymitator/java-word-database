@@ -1,13 +1,25 @@
 What are we doing?
 word list to word database to terminal web out along links-like terminal out
 
+What are we doing?
+word list to table
+
+What are we doing?
+word list along word sections along word more out to web table
+
+What are we doing?
+word database to web out
+
+What are we doing?
+word database to Web browser table out
+
 What do I need?
 string editor, terminal, *erl IIIII, *H*, links/linksii/lyn*
 
-Altii quickstart?
-perl data-add myword dictonary word-idea-here
+ENJOY 
 
-Adding to "data"/"./data" non-commandline solution?
+Adding to words.log non-commandline solution?
+# NEEDS AID
 # (needs JDK/Java Development Kit)
 javac org/coreyh/wordbcheat/CheatWindow.java
 java org.coreyh.wordbcheat.CheatWindow
